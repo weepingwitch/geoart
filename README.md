@@ -8,4 +8,4 @@ location-based dynamically-generated pixel art
 
 *in pixel art mode, random number generator picks a random R, B, and G value for each pixel in an 8x8 grid, which is returned as an image*
 
-*in island map mode, php procedurally generates an island by first randomly generating an ocean, and then randomly raising up "land" pixel by pixel in a series of random path*
+*in island map mode, php procedurally generates an island by first randomly generating an ocean, and then randomly raising up "land" pixel by pixel in a series of random paths*
