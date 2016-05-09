@@ -114,7 +114,7 @@ function updatepage(rlat, rlng)
     - <?php
     switch($mode) {
         case "map":
-            echo "<a href='geoart.php?mode=img'>render pixelart instead</a>";
+            echo "<a href='geoart.php?mode=img'>render pixel art instead</a>";
             break;
         default:
             echo "<a href='geoart.php?mode=map'>render island instead</a>";
