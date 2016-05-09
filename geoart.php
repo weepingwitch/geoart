@@ -73,9 +73,24 @@ function updatepage(rlat, rlng)
 
     $('#userLat').html(rlat);
     $('#userLng').html(rlng);
+
     //var pref = "http://willow.lol/"          - To use my rndimg.php
     var pref = ""             ;              // - To use local rndimg.php
-    var mystring = "rndimg?s=";
+
+    <?php
+    $mode = (isset($_GET['mode'])) ? $_GET['mode'] : 'img';
+
+    switch($mode) {
+        case "map":
+            echo "var mystring = 'rndmap?s=';";
+            break;
+        default:
+            echo "var mystring = 'rndimg?s=';";
+            break;
+
+    }
+
+     ?>
     var lurl = ""+rlat+""+rlng;
     mystring = mystring + lurl;
     var newstring = mystring.split('.').join('');
@@ -95,6 +110,18 @@ function updatepage(rlat, rlng)
 <BR>
 
     <span id="userLat">x</span>, <span id="userLng">x</span>
+
+    - <?php
+    switch($mode) {
+        case "map":
+            echo "<a href='geoart.php?mode=img'>render pixelart instead</a>";
+            break;
+        default:
+            echo "<a href='geoart.php?mode=map'>render island instead</a>";
+            break;
+
+        }
+         ?>
     <BR>
 
 
