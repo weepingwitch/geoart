@@ -65,14 +65,19 @@ function parseloc(arr) {
 
 }
 
-function updatepage(rlat, lng)
+function updatepage(rlat, rlng)
 {
+
+    rlat = Math.round( rlat * 100 ) / 100;
+    rlng = Math.round( rlng * 100) / 100;
 
     $('#userLat').html(rlat);
     $('#userLng').html(rlng);
     //var pref = "http://willow.lol/"          - To use my rndimg.php
-    var pref = ""                           // - To use local rndimg.php
-    var mystring = "rndimg?s="+rlat+""+rlng
+    var pref = ""             ;              // - To use local rndimg.php
+    var mystring = "rndimg?s=";
+    var lurl = ""+rlat+""+rlng;
+    mystring = mystring + lurl;
     var newstring = mystring.split('.').join('');
     finstring =  newstring.split('-').join('');
     finstring = pref + finstring
@@ -91,7 +96,6 @@ function updatepage(rlat, lng)
 
     <span id="userLat">x</span>, <span id="userLng">x</span>
     <BR>
-
 
 
 
