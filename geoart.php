@@ -111,7 +111,7 @@ function updatepage(rlat, rlng)
 
     <span id="userLat">x</span>, <span id="userLng">x</span>
 
-    - <?php
+    <BR> <?php
     switch($mode) {
         case "map":
             echo "<a href='geoart.php?mode=img'>render pixel art instead</a>";
